@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #d3d3d3;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-image: url('garage_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Для позиционирования элементов */
+}
+
+h1 {
+    color: #ffffff; /* Белый текст */
+    text-shadow: 2px 2px 4px #000000; /* Тень для читаемости */
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный чёрный фон */
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+p {
+    color: #ffffff; /* Белый текст */
+    text-shadow: 1px 1px 3px #000000; /* Лёгкая тень */
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#rocket {
+    width: 150px;
+    height: 200px;
+    margin: 10px 0;
+}
+
+#elon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Фон для блока Илона */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#elon img {
+    width: 50px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+#elon-text {
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #000000;
+    max-width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для кнопки */
+}
+
+button:hover {
+    background-color: #cc3700;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
