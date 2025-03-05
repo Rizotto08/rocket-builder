@@ -5,6 +5,7 @@ let details = 0;
 const detailsDisplay = document.getElementById("details");
 const clickButton = document.getElementById("clickButton");
 const elonText = document.getElementById("elon-text");
+const rocket = document.getElementById("rocket");
 
 detailsDisplay.textContent = details;
 
@@ -13,9 +14,13 @@ clickButton.addEventListener("click", () => {
     detailsDisplay.textContent = details;
     tg.HapticFeedback.impactOccurred("light");
 
+    // Анимация ракеты
+    rocket.classList.add("clicked");
+    setTimeout(() => rocket.classList.remove("clicked"), 300);
+
     if (details >= 100) {
-        elonText.textContent = "Неплохо, новичок! Двигатель на месте. Теперь залей топливо, или эта штука так и останется декорацией.";
-        clickButton.disabled = true; // блокируем кнопку до перехода на следующий уровень
-        // Здесь можно добавить переход на уровень 2 (позже доработаем)
+        elonText.textContent = "Неплохо, новичок! Двигатель на месте. Теперь залей топливо (0/300)!";
+        clickButton.textContent = "Add Fuel!";
+        clickButton.disabled = true; // Можно убрать, если хочешь продолжать
     }
 });

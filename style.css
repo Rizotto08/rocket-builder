@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     background-color: #d3d3d3;
 }
@@ -16,31 +16,38 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative; /* Для позиционирования элементов */
+    position: relative;
 }
 
 h1 {
-    color: #ffffff; /* Белый текст */
-    text-shadow: 2px 2px 4px #000000; /* Тень для читаемости */
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный чёрный фон */
-    padding: 5px 15px;
-    border-radius: 5px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000, 0 0 10px #00aaff; /* Тень с голубым свечением */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 50, 100, 0.7)); /* Градиентный фон */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
 p {
-    color: #ffffff; /* Белый текст */
-    text-shadow: 1px 1px 3px #000000; /* Лёгкая тень */
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
-    padding: 5px 10px;
-    border-radius: 5px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #000000;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 15px;
+    border-radius: 8px;
     margin: 5px 0;
+    font-size: 18px;
 }
 
 #rocket {
     width: 150px;
     height: 200px;
     margin: 10px 0;
+    transition: transform 0.3s; /* Анимация покачивания */
+}
+
+#rocket.clicked {
+    transform: rotate(5deg) scale(1.05); /* Лёгкое покачивание и увеличение */
 }
 
 #elon {
@@ -48,9 +55,10 @@ p {
     align-items: center;
     justify-content: center;
     margin: 10px 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Фон для блока Илона */
-    padding: 5px;
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in; /* Появление текста */
 }
 
 #elon img {
@@ -64,24 +72,38 @@ p {
     color: #ffffff;
     text-shadow: 1px 1px 3px #000000;
     max-width: 200px;
+    opacity: 0; /* Начальное состояние для анимации */
+    animation: fadeIn 0.5s forwards 0.5s; /* Задержка и появление */
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff4500;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(90deg, #ff4500, #ff8c00); /* Градиент для кнопки */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для кнопки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background 0.3s; /* Анимация нажатия */
 }
 
 button:hover {
-    background-color: #cc3700;
+    background: linear-gradient(90deg, #cc3700, #cc6600);
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+button:active {
+    transform: scale(0.95); /* Лёгкое нажатие */
 }
 
 button:disabled {
-    background-color: #cccccc;
+    background: #cccccc;
     cursor: not-allowed;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
